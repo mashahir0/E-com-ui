@@ -2,8 +2,14 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
-const Nav = () => {
+interface NavProps {
+  cartItemsCount?: number
+  onCartClick?: () => void
+}
+
+const Nav: React.FC<NavProps> = ({ cartItemsCount = 0, onCartClick }) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -27,7 +33,7 @@ const Nav = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'category', href: '/category' },
-    { name: 'products', href: '/#products' },
+    { name: 'products', href: '/products' },
     { name: 'About', href: '/#about' },
     { name: 'Contact', href: '/#contact' }
   ]
@@ -69,23 +75,50 @@ const Nav = () => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button 
-              onClick={toggleMobileMenu}
-              className="text-black hover:text-blue-200 focus:outline-none focus:text-blue-200 transition-colors duration-300"
-              aria-label="Toggle mobile menu"
+          {/* Cart Icon and Mobile Menu Button */}
+          <div className="flex items-center space-x-4">
+            {/* Cart Icon */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={onCartClick}
+              className="relative p-2 text-black hover:text-blue-200 transition-colors duration-200"
+              disabled={!onCartClick}
             >
-              {isMobileMenuOpen ? (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+              
+              {/* Cart Badge */}
+              {cartItemsCount > 0 && (
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium"
+                >
+                  {cartItemsCount > 99 ? '99+' : cartItemsCount}
+                </motion.div>
               )}
-            </button>
+            </motion.button>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button 
+                onClick={toggleMobileMenu}
+                className="text-black hover:text-blue-200 focus:outline-none focus:text-blue-200 transition-colors duration-300"
+                aria-label="Toggle mobile menu"
+              >
+                {isMobileMenuOpen ? (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                ) : (
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </div>

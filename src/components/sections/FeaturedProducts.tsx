@@ -3,6 +3,7 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Card from '@/components/ui/Card'
+import Link from 'next/link'
 
 const FeaturedProducts = () => {
   const ref = useRef(null)
@@ -110,7 +111,9 @@ const FeaturedProducts = () => {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            View All Products
+            <Link href={'/products'}>
+              View All Products
+            </Link>
           </motion.button>
         </motion.div>
       </div>

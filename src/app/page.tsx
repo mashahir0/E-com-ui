@@ -1,5 +1,5 @@
 
-import Nav from "@/components/sections/Nav";
+// import Nav from "@/components/sections/Nav";
 import HeroSection from "@/components/sections/HeroSection";
 import FeaturedProducts from "@/components/sections/FeaturedProducts";
 import CategorySection from "@/components/sections/CategorySection";
@@ -11,7 +11,7 @@ import GallerySection from "@/components/sections/GallerySection";
 export default function Home() {
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       <HeroSection />
       <CategorySection />
       <FeaturedProducts />
