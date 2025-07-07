@@ -3,6 +3,7 @@
 import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface CartItem {
   id: number
@@ -69,7 +70,7 @@ const CartSidebar: React.FC<CartSidebarProps> = ({
             animate="visible"
             exit="hidden"
             onClick={onClose}
-            className="fixed inset-0 bg-black bg-opacity-50 z-40"
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
           />
 
           {/* Sidebar */}
@@ -194,15 +195,15 @@ const CartSidebar: React.FC<CartSidebarProps> = ({
                   </span>
                 </div>
                 
-                <button
+                <Link
+                  href="/checkout"
                   onClick={() => {
-                    // Handle checkout
-                    console.log('Proceeding to checkout...')
+                    onClose()
                   }}
-                  className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
+                  className="w-full block bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 text-center"
                 >
                   Proceed to Checkout
-                </button>
+                </Link>
               </motion.div>
             )}
           </motion.div>

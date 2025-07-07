@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface Product {
   id: number
@@ -125,12 +126,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
           </div>
 
           {/* Add to Cart Button */}
-          <button
-            onClick={handleAddToCart}
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
-          >
-            Add to Cart
-          </button>
+          <Link href={`/products/${product.id}`} passHref>
+            <button
+              className="w-full bg-gray-100 text-blue-700 py-2 px-4 rounded-lg font-medium border border-blue-600 hover:bg-blue-50 transition-colors duration-200"
+            >
+              View Product
+            </button>
+          </Link>
         </div>
       </motion.div>
 
