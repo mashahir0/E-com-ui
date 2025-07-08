@@ -95,7 +95,7 @@ const CategoryPage = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Discover amazing products across our carefully curated categories. 
-            From trendy fashion to cutting-edge electronics, find exactly what you're looking for.
+            From trendy fashion to cutting-edge electronics, find exactly what you&apos;re looking for.
           </motion.p>
         </div>
       </section>
