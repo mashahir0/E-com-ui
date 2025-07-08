@@ -1,37 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛍️ E-com UI – Built with Next.js & Cursor
 
-## Getting Started
+A responsive e-commerce front-end interface built using **Next.js (App Router)**, styled with **Tailwind CSS**, animated using **Framer Motion**, and scaffolded with the help of **Cursor AI**.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- ✅ Fully responsive layout (mobile-first)
+- 🛒 Product listing grid with dynamic filters
+- 🔍 Sidebar filtering by category, brand, price, and rating
+- 🎯 Product detail pages with animation and breadcrumb
+- 💳 Fake payment gateway with order summary and animated success screen
+- 🧾 Cart preview (UI only)
+- 💌 Newsletter subscription form
+- 🧠 Testimonials and feature sections
+- 🖼️ Product gallery & category filters
+- ✨ Page transitions and component animations using **Framer Motion**
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech        | Description                            |
+|-------------|----------------------------------------|
+| **Next.js** | App Router, TypeScript                 |
+| **Tailwind CSS** | Utility-first styling             |
+| **Framer Motion** | Animations and transitions       |
+| **Cursor**   | AI-assisted development               |
+| **Mock Data** | Fake products, cart, reviews, etc.   |
+
+---
+
+## 📁 Folder Structure
+
+
+
+
+/app
+/checkout # Fake payment gateway
+/product/[slug] # Dynamic product detail pages
+/products # Product listing + filters
+/components
+/ui # Cards, Buttons, Inputs
+/sections # Hero, Features, Gallery, etc.
+/cart # CartSidebar, CartBadge
+/lib
+data.ts # Mock product + category data
+
+
+
+---
+
+## 🧪 Mock Data
+
+This project uses static JSON arrays to simulate:
+
+- Product catalog
+- Categories & brands
+- User reviews/testimonials
+- Cart data
+
+➡️ Future updates may integrate real API or CMS.
+
+---
+
+## 🐞 Known Bugs / Limitations
+
+> **Note:** This project is under development. Known issues include:
+
+- `any` types and lint warnings on some pages
+- Unescaped characters causing build warnings (`'`, `"`)
+- Incomplete form validation (checkout)
+- No real cart logic or persistent state
+- Product filters are UI-only (no real data binding yet)
+
+---
+
+## ✅ Setup & Run Locally
 
 ```bash
+git clone https://github.com/mashahir0/E-com-ui-nextjs.git
+cd E-com-ui-nextjs
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Visit: http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+🌐 Deployment
+This project is deployed on Vercel
+You can visit the live site here: [https://e-commerce-ui-weld.vercel.app/]
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🤝 Acknowledgments
+Built with:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Next.js
 
-## Deploy on Vercel
+Tailwind CSS
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Framer Motion
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# E-com-ui
+Cursor AI
+
+
+🧠 Author
+Mashahir P
+Feel free to fork, contribute, or use this as a base for your own project.
