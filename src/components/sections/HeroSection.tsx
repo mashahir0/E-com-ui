@@ -3,6 +3,7 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const HeroSection = () => {
   const ref = useRef(null)
@@ -65,6 +66,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             >
+            <Link href={'/products'}>
               <motion.button
                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 transition-all duration-300"
                 whileHover={{ 
@@ -75,6 +77,7 @@ const HeroSection = () => {
               >
                 Shop Now
               </motion.button>
+               </Link>
             </motion.div>
           </motion.div>
 
